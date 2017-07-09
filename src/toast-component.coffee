@@ -20,6 +20,9 @@ module.exports =
     mouseleave:
       dyn: true 
       cbs:"toast.setTimeout"
+  computedStyle: 
+    this: ->
+      zIndex: @toast.zIndex
   data: ->
     toast: {}
   draghandle:

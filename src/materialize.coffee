@@ -12,6 +12,7 @@ module.exports =
         style:
           opacity: [1, 0]
         duration: 200
+    methods:
       move: (o) ->
         move = o.move
         @style.transform = "translateX(#{move}px)"

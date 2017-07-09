@@ -32,8 +32,9 @@ module.exports =
         cbs: -> @$watch.notify "isTop"
   data: ->
     toasts: []
-  computedStyle: ->
-    zIndex: @zIndex
+  computedStyle:
+    this: ->
+      zIndex: @zIndex
   computed: 
     isTop: ->
       pos = @getBoundingClientRect()
@@ -43,6 +44,7 @@ module.exports =
     clear: -> @toasts = []
     toast: (o) ->
       o.timeout ?= @timeout
+      o.zIndex ?= @zIndex
       o.id = getId()
       o.close = (instant) =>
         o.removeTimeout()
