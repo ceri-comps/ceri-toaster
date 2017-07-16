@@ -22,8 +22,6 @@ module.exports = createView
       @$toast text: "click: #{@clicks++}"
     rounded: ->
       @$toast text: "click: #{@clicks++}", class: rounded: true
-  tests: (el) ->
-    describe "ceri-toaster", ->
-      after ->
-        el.remove()
-      it "should work", ->
+  tests: ceriToaster: ->
+    it "should work", =>
+      should.exist @
